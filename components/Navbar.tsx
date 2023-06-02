@@ -4,12 +4,12 @@ import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 
 function Navbar() {
 	return (
-		<nav className='h-12 grid grid-cols-3 items-center px-8 border-b border-neutral-800'>
-			<Link href={'/'} className='px-4 py-2 w-fit hover:text-slate-400 transition'>
+		<nav className='grid grid-cols-3 items-center px-8 border-b border-neutral-800 text-center'>
+			<Link href={'/'} className='max-sm:hidden px-4 py-2 w-fit hover:text-slate-400 transition'>
 				HOME
 			</Link>
 
-			<div className='flex justify-center gap-4'>
+			<div className='flex justify-center max-sm:col-span-2 sm:gap-4'>
 				<Link href={'/desafio-um'} className='px-4 py-2 hover:text-slate-400 transition'>
 					Desafio Um
 				</Link>
@@ -20,7 +20,7 @@ function Navbar() {
 					Desafio Três
 				</Link>
 			</div>
-			<div className='flex justify-end items-center gap-4'>
+			<div className='flex justify-end items-center gap-2 sm:gap-4'>
 				<Link
 					href={'https://github.com/imLymei/'}
 					className='hover:text-slate-400 transition'
