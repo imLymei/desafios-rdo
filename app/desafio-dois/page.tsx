@@ -24,7 +24,7 @@ function Page() {
 	];
 
 	const [board, setBoard] = useState<number[][]>(defaultBoard);
-	const [gameState, setGameState] = useState<string>('idle');
+	const [gameState, setGameState] = useState<string>('paused');
 	const [gameId, setGameId] = useState<any>(undefined);
 	const speed = useRef<number>(1000);
 
