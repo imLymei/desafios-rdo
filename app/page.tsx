@@ -1,8 +1,11 @@
+import Image from 'next/image';
+
 type ChallengesCard = {
 	challengeNumber: string;
 	challengeTitle: string;
 	challengeDescription: string;
 	challengeLink: string;
+	challengeImageLink: string;
 };
 
 export default function Home() {
@@ -22,18 +25,21 @@ export default function Home() {
 					challengeTitle='Conversor de números romanos'
 					challengeDescription='Um conversor de números arábicos para romanos e romanos para arábicos.'
 					challengeLink='/desafio-um'
+					challengeImageLink='https://cdn.discordapp.com/attachments/1033477432851836959/1114703510244696094/image.png'
 				/>
 				<ChallengesCard
 					challengeNumber='2'
 					challengeTitle='Jogo da vida'
 					challengeDescription='Um tabuleiro interativo do jogo da vida de Conway com 10x10 células e controle de velocidade em tempo real.'
-					challengeLink='/desafio-um'
+					challengeLink='/desafio-dois'
+					challengeImageLink='https://cdn.discordapp.com/attachments/1033477432851836959/1114703553471193138/image.png'
 				/>
 				<ChallengesCard
 					challengeNumber='3'
 					challengeTitle='Divisor de conta de restaurante'
 					challengeDescription='Um software feito para calcular comandas de um restaurante com a possibilidade de dividir a comanda por consumo entre clientes de uma mesma mesa.'
-					challengeLink='/desafio-um'
+					challengeLink='/desafio-tres'
+					challengeImageLink='https://media.discordapp.net/attachments/1033477432851836959/1114703595527491585/image.png?width=1440&height=594'
 				/>
 			</div>
 		</main>
@@ -45,6 +51,7 @@ function ChallengesCard({
 	challengeTitle,
 	challengeDescription,
 	challengeLink,
+	challengeImageLink,
 }: ChallengesCard) {
 	return (
 		<a href={challengeLink} className='p-4 border border-white rounded-sm transition hover:scale-105'>
@@ -53,6 +60,9 @@ function ChallengesCard({
 			</p>
 			<p className='text-xl text-center'>{challengeTitle}</p>
 			<p>{challengeDescription}</p>
+			<div className='relative aspect-video'>
+				<Image src={challengeImageLink} alt='Challeng Image' fill className='object-contain' />
+			</div>
 		</a>
 	);
 }
