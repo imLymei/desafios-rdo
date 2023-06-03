@@ -423,7 +423,7 @@ function Page() {
 		<div className='grid grid-cols-1 sm:grid-cols-3 grid-rows-3 sm:grid-rows-1 gap-4 p-8 h-[1800px] sm:h-[800px]'>
 			<AddForms />
 			<div className='h-full flex flex-col gap-4 p-2 border border-white rounded-sm'>
-				<p className='flex justify-center items-center text-2xl font-bold'>Lista:</p>
+				<p className='flex justify-center items-center text-2xl font-bold'>Dados:</p>
 
 				<div className='flex flex-col flex-auto'>
 					<div className='flex gap-2 overflow-hidden'>

@@ -149,7 +149,12 @@ function Page() {
 						<p>I = 1</p>
 					</div>
 				</form>
-				<div className='flex justify-between items-center p-2 border border-t-0 w-full border-white rounded-b-sm'>
+				<div
+					className={`flex justify-between items-center p-2 border border-t-0 w-full border-white rounded-b-sm origin-top transition-all ${
+						result == undefined
+							? 'scale-0 opacity-0 -translate-y-full'
+							: 'scale-100 opacity-100 translate-y-0'
+					}`}>
 					<p>Resultado:</p>
 					<p className={typeof result == 'string' ? 'font-serif' : ''}>{result}</p>
 				</div>

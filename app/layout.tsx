@@ -1,11 +1,12 @@
 import Navbar from '@/components/Navbar';
 import './globals.css';
 import { Inter } from 'next/font/google';
+import Footer from '@/components/Footer';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-	title: 'Desafios Rotas das Oficinas',
+	title: 'Desafios RDO',
 	description: 'Felipe Cardoso Brito da Silveira - lymeicontato@gmail.com',
 };
 
@@ -15,6 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 			<body className={`bg-black text-white ${inter.className}`}>
 				<Navbar />
 				{children}
+				<Footer />
 			</body>
 		</html>
 	);
