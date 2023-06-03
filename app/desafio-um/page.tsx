@@ -118,7 +118,7 @@ function Page() {
 						<input
 							required
 							name='number'
-							className='outline-none p-1 border border-white rounded-sm bg-black'
+							className='outline-none p-1 border border-slate-600 rounded-sm bg-black'
 							placeholder='XVI ou 16'
 						/>
 					</div>
