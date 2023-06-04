@@ -54,14 +54,23 @@ function ChallengesCard({
 	challengeImageLink,
 }: ChallengesCard) {
 	return (
-		<a href={challengeLink} className='p-4 border border-white rounded-sm transition hover:scale-105'>
+		<a
+			href={challengeLink}
+			draggable={false}
+			className='p-4 border border-white rounded-sm transition hover:scale-105'>
 			<p className='text-2xl font-semibold text-center border-b border-neutral-600 mb-2'>
 				~ Desafio {challengeNumber} ~
 			</p>
 			<p className='text-xl text-center'>{challengeTitle}</p>
 			<p>{challengeDescription}</p>
 			<div className='relative aspect-video'>
-				<Image src={challengeImageLink} alt='Challeng Image' fill className='object-contain' />
+				<Image
+					src={challengeImageLink}
+					draggable={false}
+					alt='Challeng Image'
+					fill
+					className='object-contain'
+				/>
 			</div>
 		</a>
 	);

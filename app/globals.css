@@ -2,13 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-.hello {
-	animation: spin 3s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-}
-
 * {
 	scrollbar-width: thin;
 	scrollbar-color: #111 #222;
+}
+
+.hello {
+	animation: spin 3s cubic-bezier(0.5, 0, 0.5, 1) infinite;
 }
 
 /* Chrome, Edge, and Safari */
