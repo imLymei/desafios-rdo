@@ -134,7 +134,7 @@ function Page() {
 
 	return (
 		<div className='flex flex-col items-center gap-12 p-8'>
-			<h1 className='text-4xl'>Jogo da vida</h1>
+			<h1 className='text-4xl font-bold'>Jogo da vida</h1>
 			<div className='grid grid-cols-11 text-center'>
 				<p></p>
 				<p>0</p>

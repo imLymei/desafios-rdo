@@ -247,7 +247,7 @@ function Page() {
 
 	function AddForms() {
 		return (
-			<div className='flex flex-col h-full justify-evenly items-center gap-4 p-2 border border-white rounded-sm'>
+			<div className='flex flex-col h-full justify-between items-center gap-4 p-2 border border-white rounded-sm'>
 				<p className='text-2xl font-bold'>Formulário:</p>
 				<div className='flex flex-col gap-2 w-full'>
 					<label>Nome do Cliente</label>
@@ -305,6 +305,7 @@ function Page() {
 					/>
 					<label htmlFor='tenPercentCheckButton'>Adicionar taxa de 10%</label>
 				</div>
+				<div />
 			</div>
 		);
 	}
@@ -380,7 +381,9 @@ function Page() {
 						</div>
 						<div
 							className={`relative flex justify-between font-semibold ${
-								tenPercentCheckButton && tenPercentPay.length == 0 ? 'text-red-500' : ''
+								tenPercentCheckButton && tenPercentPay.length == 0 && clients.length != 0
+									? 'text-red-500'
+									: ''
 							}`}>
 							<p>Taxa:</p>
 							<p>
@@ -391,7 +394,7 @@ function Page() {
 							</p>
 							<div
 								className={`absolute -right-6 top-1/2 -translate-y-1/2 ${
-									tenPercentCheckButton && tenPercentPay.length == 0 ? '' : 'hidden'
+									tenPercentCheckButton && tenPercentPay.length == 0 && clients.length != 0 ? '' : 'hidden'
 								}`}>
 								<p className='text-xs w-4 h-4 flex justify-center items-center transition-all duration-300 rounded-xl hover:rounded-sm border border-red-500 peer cursor-default'>
 									?
@@ -420,32 +423,35 @@ function Page() {
 	}
 
 	return (
-		<div className='grid grid-cols-1 sm:grid-cols-3 grid-rows-3 sm:grid-rows-1 gap-4 p-8 h-[1800px] sm:h-[800px]'>
-			<AddForms />
-			<div className='h-full flex flex-col gap-4 p-2 border border-white rounded-sm'>
-				<p className='flex justify-center items-center text-2xl font-bold'>Dados:</p>
+		<div className='p-2'>
+			<h1 className='text-4xl text-center font-bold'>Calculadora de Comandas</h1>
+			<div className='grid grid-cols-1 sm:grid-cols-3 grid-rows-3 sm:grid-rows-1 gap-4 p-8 h-[1800px] sm:h-[800px]'>
+				<AddForms />
+				<div className='h-full flex flex-col gap-4 border border-white rounded-sm p-2'>
+					<p className='flex justify-center items-center text-2xl font-bold'>Dados:</p>
 
-				<div className='flex flex-col flex-auto'>
-					<div className='flex gap-2 overflow-hidden'>
-						<button
-							onClick={() => setIsFormInClient(true)}
-							className={`p-2 border border-white border-b-transparent rounded-t-sm transition-all ${
-								isFormInClient ? 'translate-y-0' : 'translate-y-2'
-							}`}>
-							Clientes
-						</button>
-						<button
-							onClick={() => setIsFormInClient(false)}
-							className={`p-2 border border-white border-b-transparent rounded-t-sm transition-all ${
-								isFormInClient ? 'translate-y-2' : 'translate-y-0'
-							}`}>
-							Produtos
-						</button>
+					<div className='flex flex-col flex-auto'>
+						<div className='flex gap-2 overflow-hidden'>
+							<button
+								onClick={() => setIsFormInClient(true)}
+								className={`p-2 border border-white border-b-transparent rounded-t-sm transition-all ${
+									isFormInClient ? 'translate-y-0' : 'translate-y-2'
+								}`}>
+								Clientes
+							</button>
+							<button
+								onClick={() => setIsFormInClient(false)}
+								className={`p-2 border border-white border-b-transparent rounded-t-sm transition-all ${
+									isFormInClient ? 'translate-y-2' : 'translate-y-0'
+								}`}>
+								Produtos
+							</button>
+						</div>
+						<div className='h-[62%] sm:h-[600px]'>{isFormInClient ? <ClientForm /> : <ProductsForm />}</div>
 					</div>
-					<div className='h-[62%] sm:h-[600px]'>{isFormInClient ? <ClientForm /> : <ProductsForm />}</div>
 				</div>
+				<InvoicePage />
 			</div>
-			<InvoicePage />
 		</div>
 	);
 }

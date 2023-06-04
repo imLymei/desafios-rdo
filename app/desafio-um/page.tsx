@@ -107,7 +107,7 @@ function Page() {
 
 	return (
 		<div className='flex flex-col items-center gap-12 p-8'>
-			<h1 className='text-4xl text-center'>Conversor de números romanos</h1>
+			<h1 className='text-4xl text-center font-bold'>Conversor de números romanos</h1>
 
 			<div className='relative w-fit mx-auto '>
 				<form
