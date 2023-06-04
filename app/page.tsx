@@ -11,13 +11,13 @@ type ChallengesCard = {
 export default function Home() {
 	return (
 		<main className='flex flex-col justify-center items-center gap-16 p-12'>
-			<div className='flex text-6xl gap-2 font-bold'>
+			<div className='flex text-6xl font-bold'>
 				<p>{'<'}</p>
-				<div className='flex justify-center'>
-					<h1>Hello World</h1>
+				<div className='flex justify-center pr-2'>
 					<div className='hello origin-bottom-right'>👋</div>
+					<h1>Hello World!</h1>
 				</div>
-				<p>{'>'}</p>
+				<p>{'/>'}</p>
 			</div>
 			<div className='grid grid-cols-3 grid-rows-1 gap-8'>
 				<ChallengesCard
