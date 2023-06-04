@@ -262,8 +262,8 @@ function Page() {
 					</button>
 				</div>
 				<div className='flex flex-col gap-2 w-full'>
-					<div className='flex'>
-						<div className='flex flex-col w-1/2 gap-2'>
+					<div className='grid grid-cols-2 lg:grid-cols-3 w-full'>
+						<div className='flex flex-col justify-between gap-2'>
 							<label>Nome do Produto</label>
 							<input
 								ref={addProductNameInput}
@@ -271,7 +271,7 @@ function Page() {
 								placeholder='Coca-Cola'
 							/>
 						</div>
-						<div className='flex flex-col w-1/2 gap-2'>
+						<div className='flex flex-col justify-between gap-2'>
 							<label>Preço do Produto</label>
 							<input
 								ref={addProductPriceInput}
@@ -279,7 +279,7 @@ function Page() {
 								placeholder='5.99'
 							/>
 						</div>
-						<div className='flex flex-col w-1/2 gap-2'>
+						<div className='flex flex-col justify-between gap-2 max-lg:col-span-2'>
 							<label>Quantidade</label>
 							<input
 								ref={addProductQuantityInput}
